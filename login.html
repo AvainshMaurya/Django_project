@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+<style>
+   .form-control
+    {
+    height:50px;
+    background:#f2f2f2;
+    margin-bottom:3%;
+    }
+</style>
+<div class="row pt-5 pb-5">
+    <div class="col-5 mx-auto bg-light">
+        <div class="row pt-3 ">
+		<div class="col-12 text-center px-5">
+		<div class="text-center fs-2 bg-light">Welcome to <b class="txt-mycolor">Student Login</b></div>
+		<h6>LogIn to Your ID</h6></div>
+		<br/>
+<div class="row pt-3  pb-4">
+<form method="post">
+            {% csrf_token %}
+   <div class="col-12 ps-1">
+      UserName :
+      <input type="email" name="email" required placeholder="Enter UserName...." class="form-control"/>
+   </div>
+<div class="col-12 ps-1">
+   Password :
+      <input type="password" name="passwd" required placeholder="Enter Your Password...." class="form-control pt-1"/>
+</div>
+<div class="col-12 p-3 ">
+      <input class="form-control rounded rounded-5 bg-warning"  type="submit" value="Login"/>
+</div>
+<div class="col-12 p-3 text-center nn">
+      <h6>Or <a href="#" class="text-warning"> Forget Password.</a></h6>
+</div>
+<hr/>
+<div class="col-12 text-center">
+<h6>Don't have your account? <b class="text-warning"> Sign Up</b></h6>
+</div>
+</form>
+</div>
+</div>
+    </div>
+    </div>
+{% endblock %}

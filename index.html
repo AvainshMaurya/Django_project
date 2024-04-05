@@ -1,0 +1,182 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+<style>
+  .xyz
+  {
+   border-radius:100%;
+    width:140px;
+    height:140px;
+  }
+</style>
+<div class="row">
+  <div class="col-sm-9">
+        <!--start slider-->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active pt-2" data-bs-ride="carousel">
+      <img src="{% static 'images/college.jpg' %}" style="max-height:450px;" class="d-block w-100 rounded rounded-3" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Chhatrapati shahuji Maharaj Govt Polytechnic College Ambedekar Nagar</h5>
+        <p>The best polytechnic colleges in Uttar Pradesh. It was established in the year 2005.</p>
+      </div>
+    </div>
+    {% for i in sd %}
+    <div class="carousel-item pt-2" data-bs-ride="carousel">
+      <img src="/{{i.slider_picture}}"style="max-height:450px;" class="d-block w-100 rounded rounded-3" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{i.headlines}}</h5>
+        <p>{{i.slider_dec}}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+        <!--End slider-->
+    </div>
+    <div class="col-sm-3">
+      <div class="fs-4 text-center text-dark"><b>New</b><b class="txt-mycolor"> Batches</b></div>
+       <marquee direction="up" height="420px" behavior="alternate" onmouseover="stop()" onmouseleave="start()">
+
+        {% for i in nbdata %}
+        <div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="/{{i.bacth_pic}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text"  style="font-size:11px">
+          <big>{{i.Name}}</big><br/>
+          <i class="fa-solid fa-calendar-days"></i>
+          {{i.starting_date}}
+        </p>
+       </div>
+    </div>
+  </div>
+</div>
+   {% endfor %}
+      </marquee>
+    </div>
+</div>
+
+<!---start latest news-->
+<div class="row bg-light pb-2">
+<div class="text-center fs-2 mt-2"><i class="fa-solid fa-users"></i>  Our
+ <b class="text-danger"> Instructor</b>
+</div>
+</div>
+<div class="row pb-5 pt-3 ">
+  <div class="col-sm-10 mx-auto">
+     <div class="row">
+                  <div class="col-sm-3">
+                      <div class="card card1" style="width: 15rem;box-shadow: 5px 10px 8px #888888;">
+                          <img src="{% static 'images/rahul.jpg' %}" class="card-img-top" alt="..."  style="padding: 50px; border-radius: 170px;">
+                          <div class="card-body">
+                              <p style="text-align: center;"><span style="color:#A71135" >Prof. (Mr.) Rahul Soni</span></p>
+                              <p style="color:gray;margin-left: 30px;"><center>ANALYST</center></p>
+                          </div>
+                      </div>
+          </div>
+                    <div class="col-sm-3">
+                      <div class="card card1" style="width: 15rem;box-shadow: 5px 10px 8px #888888;">
+                          <img src="{% static 'images/man1.jpg' %}" class="card-img-top" alt="..."  style="padding: 50px; border-radius: 170px;">
+                          <div class="card-body">
+                              <p style="text-align: center;"><span style="color:#A71135" >Manager. (Mr.) Kamal Singh</span></p>
+                              <p style="color:gray;margin-left: 30px;">VICE CHANCELLOR</p>
+                          </div>
+                      </div>
+          </div>
+                    <div class="col-sm-3">
+                      <div class="card card1" style="width: 15rem;box-shadow: 5px 10px 8px #888888;">
+                          <img src="{% static 'images/diractor2.jpg' %}" class="card-img-top" alt="..."  style="padding: 50px; border-radius: 170px;">
+                          <div class="card-body">
+                              <p style="text-align: center;"><span style="color:#A71135" >Prof. (Dr.) Renu Singh</span></p>
+                              <p style="color:gray;margin-left: 30px;"><center>REGISTRAR</center></p>
+                          </div>
+                      </div>
+          </div>
+                    <div class="col-sm-3">
+                      <div class="card card1" style="width: 15rem;box-shadow: 5px 10px 8px #888888;">
+                          <img src="{% static 'images/princepal.jpg' %}" class="card-img-top" alt="..."  style="padding: 50px; border-radius: 170px;">
+                          <div class="card-body">
+                              <p style="text-align: center;"><span style="color:#A71135" >Princepal. (Dr.) Rajesh Verma</span></p>
+                              <p style="color:gray;margin-left: 30px;">VICE CHANCELLOR</p>
+                          </div>
+                      </div>
+          </div>
+      </div>
+  </div>
+  </div>
+<div class="row">
+<div class="text-center fs-3 text-dark bg-light"><i class="fa-solid fa-user-gear"></i>  Our <b class="text-danger">Services</b></div>
+</div>
+<div class="row services">
+<div class="col-sm-11 mx-auto">
+<div class="row">
+<div class="col-sm-4 p-3">
+<div class="Text-center border border-1px border-dark p-4 text-dark" style="background:#dbdbdb">
+<i class="fa-solid fa-video"></i><br/>
+<b class="text-danger">Lectures Video</b>
+<div class="Text-center">A video lecture is a pre-recorded video of a teacher or expert delivering a lesson or presentation on a particular topic.</div>
+</div></div>
+<div class="col-sm-4 p-3">
+<div class="Text-center border border-1px border-dark p-4 text-dark" style="background:#dbdbdb">
+<i class="fa-solid fa-bars-progress"></i><br/>
+<b class="text-danger">Task</b>
+<div class="Text-center"> A task is an activity or piece of work which you have to do, usually as part of a larger project.
+The task is provided online & offline Student.
+</div>
+</div>
+</div>
+<div class="col-sm-4 p-3">
+<div class="Text-center border border-1px border-dark p-4 text-dark" style="background:#dbdbdb">
+<i class="fa-solid fa-laptop-code"></i><br/>
+<b class="text-danger">Software Kit</b>
+<div class="Text-center">A software development kit is a collection of software development tools in one installable package.</div>
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="col-sm-4 p-3">
+<div class="Text-center border border-1px border-dark p-3 text-dark" style="background:#dbdbdb">
+<i class="fa-solid fa-headset"></i><br/>
+<b class="text-danger">Live Classes</b>
+<div class="Text-center">Live online classes are synchronous events organized in a live virtual meeting room where students and teachers.</div>
+</div></div>
+<div class="col-sm-4 p-3">
+<div class="Text-center border border-1px border-dark p-4 text-dark" style="background:#dbdbdb">
+<i class="fa-solid fa-file-pdf"></i><br/>
+<b class="text-danger">PDF Notes</b>
+<div class="Text-center">And although the formatting holds consistent across devices, PDFs are anything but rigid.</div>
+</div>
+</div>
+<div class="col-sm-4 p-3">
+<div class="Text-center border border-1px border-dark p-4 text-dark" style="background:#dbdbdb">
+<i class="fa-brands fa-wordpress"></i><br/>
+<b class="text-danger">Word press</b>
+<div class="Text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<!---end latest news-->
+{% endblock %}

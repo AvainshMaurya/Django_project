@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<style>
+.form
+	{
+	height:50px;
+	margin-bottom:.8%;
+	}
+	.hr2
+        {
+        background:;
+        }
+        .hr2:after
+        {
+        content:'';
+        display:block;
+        max-width:17%;
+        border-bottom:3px solid Yellow;
+        }
+</style>
+<div class="row">
+<div class="text-center fs-2 bg-light pt-4">
+	<i class="fa-solid fa-address-book"></i> Contact
+	<b class="txt-mycolor"> WithUs</b>
+</div>
+</div>
+<div class="row bg-light">
+	<div class="col-8 mx-auto pb-4">
+		You may contact us by contact number or fill this from any time you need professional support or have any question
+	</div><br/>
+</div>
+<div class="row bg-light">
+	<div class="col-sm-10 mx-auto pb-4">
+		<div class="row">
+			<div class="col-sm-6 p-5 bg-white">
+				<h4 class="hr2">Send Your Message</h4>
+				<form method="post">
+					{% csrf_token %}
+					Name :<input type="text" name="name" placeholder="Enter Your Name*" class="form-control" required/><br/>
+					Email :<input type="email" name="email" placeholder="Enter Your Email*" class="form-control" required/><br/>
+					Mobile :<input type="text" name="mobile" placeholder="Enter Your Mobile*" class="form-control" required/><br/>
+					Message :<textarea  class="form-control" name="msg" placeholder="Type Your Message Here*" ></textarea><br/>
+					<input type="submit" value="SEND MESSAGE" class="btn btn-outline-warning">
+				</form>
+			</div>
+			<div class="col-sm-6 p-5 bg-white ">
+               <div class="row ">
+            <div class="col-12 bg-light p-5 me-5 border border-red">
+                <h3 class="div hr2">Contact Info</h3>
+				<div class="a text-warning">
+					<i class="fa-solid fa-location-dot text-warning"></i>
+					<b>Office Address</b>
+					<div class=" text-dark">
+					<p>
+						Plot No-44,Behind H.P Ptrol pump,<br/>
+						Tedhi puliya Ring Rd,Sector 5,<br/>
+						Vikash Nager Lucknow<br/>
+						Uttar Pradesh 226022
+					</p>
+					</div>
+					<div class="b">
+					<i class="fa-solid fa-phone text-warning "></i>
+					<b>Call Us</b>
+						<div class="t text-dark">
+					<p>
+						+91 8299223421<br/>+91 9828294711
+					</p>
+				</div>
+					</div>
+					<div class="c">
+						<i class="fa-solid fa-envelope text-warning"></i>
+						  <b>Mail Us</b>
+						<div class=" text-dark">
+						 <p>
+							mauryaavanish55@gmail.com<br/>
+							mauryaavanish836@gmail.com
+						 </p>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="text-center fs-2 pt-4">
+	<i class="fa-solid fa-location-dot"></i> Find As Now
+	<b class="txt-mycolor"> Google Map</b></div>
+<div class="row">
+	<div class="col-8 mx-auto pb-4">
+		<center>View us on google map easily</center>
+	</div>
+	<br/>
+</div>
+<div class="row">
+	<div class="col-12 pb-2 ">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.161150933239!2d80.96384467452012!3d26.898380260708045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39995785d5f7f1a5%3A0xffa47f1efe103f0d!2sTechpile%20Technology%20Pvt.%20Ltd.%20%7C%7C%20software%20training%20institute%20in%20Lucknow!5e0!3m2!1sen!2sin!4v1694367521367!5m2!1sen!2sin"
+				 style="border:0; width:100%; height:300px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+		</iframe>
+	</div>
+</div>
+{% endblock %}

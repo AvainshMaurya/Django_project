@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+<style>
+    .abc
+    {
+     border-radius:100%;
+    width:240px;
+    height:240px;
+    }
+    .border
+    {
+    border:2px solid black;
+    }
+</style>
+<div class="text-center fs-2  pt-4">
+   <i class="fa-solid fa-user"></i> Our
+    <b class="txt-mycolor"> PROFILE</b>
+</div>
+<hr/>
+<div class="container-fluid">
+        <div class="row pb-5 bg-light">
+            <div class="col-sm-3 mx-auto">
+                <div class=" pt-4 ps-5">
+                 <img src="{% static 'images/avanish.jpg/' %} " class="img-fluid abc">
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-sm-6  mx-auto  pt-4 ps-5 text-center">
+                <b class="fs-2 text-info">Avanish Maurya</b><br/>
+                Diploma (Information Technology)<br/>
+                <p class="fs-5  pt-3">Chhatrapati shahuji Maharaj Govt Polytechnic College
+                Akbarpur Ambedekar Nagar 226022
+                </p>
+            </div>
+                <div class="text-dark fs-2 pt-3 nn text-center">
+                            <a class="ps-3 text-primary"  href="https://www.facebook.com/avanish.maurya.7923?mibextid=ZbWKwL">
+                           <i class="fa-brands fa-facebook"title="Facebook"></i>
+                            </a>
+                            <a class="ps-3 text-warning" href="https://instagram.com/awanish_maurya_5566?igshid=MzMyNGUyNmU2YQ==">
+                            <i class="fa-brands fa-instagram" title="Instagram"></i>
+                            </a>
+                            <a class="ps-3 text-primary" href="https://x.com/Avanish39557212?t=QpP1n9Mm6912O89OSTVuRQ&s=09">
+                                <i class="fa-brands fa-twitter" title="Twitter"></i>
+                            </a>
+                            <a class="ps-3 text-info" href="https://www.linkedin.com/in/avanish-maurya-81834127b">
+                                 <i class="fa-brands fa-linkedin" title="Linkedin"></i>
+                            </a>
+                            <a class="ps-3 text-danger" href="https://youtube.com/@avanishmaurya3061?si=K6PqweOkzEbZeMNJ">
+                                <i class="fa-brands fa-youtube" title="Youtube"></i>
+                            </a>
+                        </div>
+</div>
+        </div>
+</div>
+
+{% endblock %}

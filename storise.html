@@ -1,0 +1,81 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+<style>
+.card
+    {
+    box-shadow:0px 2px 5px black;
+    }
+    .card-img-top:hover
+    {
+    transform:scale(1.02);
+    }
+</style>
+<div class="text-center fs-2  pt-4"><i class="fa-solid fa-images"></i>
+    Recent <b class="txt-mycolor">Placed </b>Students
+</div>
+<div class="row">
+	<div class="col-8 mx-auto pb-4">
+		<center>Learning Hub is known for its 100% Placement.
+            The students which are recently placed from Learning Hub</center>
+    </div><br/>
+</div>
+
+<div class="row ">
+    <div class="col-sm-10  mx-auto ">
+        <form method="get">
+        <div class="row">
+            <div class="col-sm-5">
+                <b>College :</b>
+                <select class="form-control" name="college">
+                    <option>--Select College--</option>
+                    {% for i  in cdata %}
+                    <option value="{{i.id}}">{{i.college_name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-sm-5">
+                <b>Traning Session :</b>
+                <select class="form-control" name="year">
+                    <option>--Select Session--</option>
+                    {% for x in sdata %}
+                    <option value="{{x.id}}">{{x.session}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-sm-2 pt-4">
+                <input type="submit" value="Search" class="btn btn-outline-warning"/>
+            </div>
+        </div>
+            </form>
+    </div>
+</div>
+<div class="row pt-3">
+    <div class="col-sm-10 mx-auto pb-4">
+        <div class="row py-3" style="background:#deedec;">
+            <!--card--->
+            {% for a in pdata %}
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-4">
+                <div class="card">
+                    <img src="/{{a.student_picture}}" class="card-img-top" style="max-height:220px;"/>
+                    <div class="card-body">
+                       <p class="card-text ">
+                        <b>{{a.student_name}}</b><br/>
+                       <small>{{a.batch}} || {{a.session}}</small><br/>
+                        {{a.company_name}} <img src="/{{a.company_logo}}" class="img-thumbnail " style="height:50px"/>
+                           <br/>
+                        {{a.college}}
+                       </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

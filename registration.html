@@ -1,0 +1,89 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+<style>
+    .from-control
+    {
+    height:45px;
+    margin-bottom:15px;
+    }
+
+</style>
+<div class="text-center fs-2 pt-4 bg-light"><i class="fa-solid fa-users-line"></i>
+        <b class="txt-mycolor">Registration</b></div>
+        <div class="text-center bg-light">Free Register Yourself for the upcoming open learning by Learning Hub</div>
+<div class="row pt-3 pb-5 bg-light">
+    <div class="col-5 mx-auto border border-red bg-white pt-3">
+        <form method="post" enctype="multipart/form-data">
+           {% csrf_token %}
+           Name :
+        <div class="input-group pb-2">
+            <i class="input-group-text">
+                <i class="fa-solid fa-user"></i></i>
+        <input type="text" name="name" required placeholder="Enter Your Name*" class="form-control"/>
+        </div>
+           Email :
+        <div class="input-group pb-2">
+            <i class="input-group-text">
+               <i class="fa-regular fa-envelope"></i></i>
+            <input type="text" name="email" required placeholder="Enter Your Email*" class="form-control"/>
+        </div>
+           Password :
+        <div class="input-group pb-2">
+            <i class="input-group-text">
+                <i class="fa-solid fa-lock"></i></i>
+          <input type="password" name="passwd" placeholder="Enter Your Password*" class="form-control " required/>
+        </div>
+            Mobile (Whatsapp No) :
+        <div class="input-group pb-2">
+            <i class="input-group-text">
+                 <i class="fa-solid fa-phone"></i></i>
+            <input type="text" name="mobile" required placeholder="Enter Your Mobile No*" class="form-control"/>
+        </div>
+           College :
+        <div class="input-group pb-2 ">
+            <i class="input-group-text">
+              <i class="fa-solid fa-graduation-cap"></i></i>
+            <input type="text" name="college" required placeholder="Enter Your College Name*" class="form-control"/>
+        </div>
+           Course :
+        <div class="input-group pb-2">
+            <i class="input-group-text">
+                <i class="fa-solid fa-book"></i></i>
+            <input type="text" name="course" required placeholder="Enter Your Course*" class="form-control"/>
+        </div>
+            Year :
+        <div class="input-group pb-2">
+            <i class="input-group-text">
+                <i class="fa-solid fa-calendar-days"></i></i>
+             <select name="pyear" class="form-control">
+                       <option>--Select Passing Year---</option>
+                       <option>I Year</option>
+                       <option>II Year</option>
+                       <option>III Year</option>
+                       <option>IV Year</option>
+                   </select>
+        </div>
+             <div class=" pb-2">Batch :
+            <select name="batch" class="form-control">
+                <option>--Select your Batch--</option>
+                {% for i in bdata %}
+                <option value="{{i.id}}">{{i.batch_name}}</option>
+                {% endfor %}
+            </select>
+             </div>
+             Profile Picture :
+        <div class="input-group pb-2 ">
+            <i class="input-group-text">
+               <i class="fa-regular fa-image"></i></i>
+             <input type="file" name="fu" class="form-control"/>
+        </div>
+
+        <div class="input-group pt-4 pb-5">
+            <input type="submit" value="REGISTRATION NOW" class="form-control text-light bg-warning"/>
+        </div>
+			</form>
+        </div>
+    </div>
+
+{% endblock %}
